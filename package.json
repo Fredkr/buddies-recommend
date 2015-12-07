@@ -9,7 +9,7 @@
     "build:js": "npm run eslint && npm run browserify",
     "build:scss": "node-sass scss/site.scss | postcss --use autoprefixer -o public/css/site.css",
     "watch": "nodemon -e js,scss,jsx -w server.js -w scripts/**/*.* -w scss/**/*.scss -x 'npm run build:js && npm run build:scss && node server.js'",
-    "postinstall": "mkdir public public/scripts public/css && npm run build:scss && npm run build:js"
+    "postinstall": "mkdir public/scripts public/css && npm run build:scss && npm run build:js"
   },
   "author": "Fredrik Källström",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "eslint-plugin-react": "^3.11.2",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "node-sass": "^3.4.2",
     "nodemon": "^1.8.1",
     "postcss-cli": "^2.3.2",
     "react": "^0.14.3",

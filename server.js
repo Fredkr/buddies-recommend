@@ -19,5 +19,5 @@ app
 
 //routes
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('under-construction');
 });
