@@ -1,10 +1,20 @@
+var classToggle = function(toggle, className){
+    if(toggle === true) {
+        return className;
+    }
+    return '';
+};
+
 var express = require('express'),
     exphbs = require('express-handlebars'),
     LOCAL_PORT = 3001,
     app = express(),
     handlebars = exphbs.create({
-        defaultLayout: 'main',
+        defaultLayout: 'default',
         extname: '.html',
+        helpers: {
+            classToggle: classToggle
+        }
     });
 
 //setup
@@ -19,5 +29,14 @@ app
 
 //routes
 app.get('/', function (req, res) {
-    res.render('under-construction');
+    res.render('home');
+});
+
+app.get('/register', function (req, res) {
+    res.render('account-creation', {layout: 'accountlayout'});
+
+});
+
+app.get('/login', function (req, res) {
+    res.render('account-login', {layout: 'accountlayout'});
 });
