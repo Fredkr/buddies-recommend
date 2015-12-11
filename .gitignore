@@ -1,6 +1,6 @@
 # public
-public/css
-!public/css/lib
+public/css/*
+!public/css/lib/
 public/scripts
 
 #config
