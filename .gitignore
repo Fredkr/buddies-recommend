@@ -1,6 +1,10 @@
 # public
 public/css
+!public/css/lib
 public/scripts
+
+#config
+config.json
 
 # Logs
 logs

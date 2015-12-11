@@ -1,10 +1,35 @@
 html, body {
+    min-height: 100%;
     height: 100%;
     width: 100%;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: $blue;
+
+        &:hover {
+            color: $blue-dark;
+        }
+    }
 }
 
 body {
     font-size: $font-size-default;
     font-family: $font-family-default;
-    background-image: linear-gradient($grey, $dark-grey);
+    background-image: linear-gradient($white-background, $white-blue-background);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    height: 2.769rem;
+    box-sizing: border-box;
+    border: 1px solid $grey;
+    padding: 0;
+    margin: 0;
+    background: $white-blue-background;
+    border-radius: 3px;
+    padding: 0 1rem;
+    width: 100%;
 }

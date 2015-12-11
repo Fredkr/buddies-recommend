@@ -1,0 +1,36 @@
+.btn {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    border: 2px solid;
+    border-color: $blue;
+    border-radius: .5rem;
+    margin: 0 $space-default;
+    cursor: pointer;
+    box-sizing: border-box;
+
+     &-small {
+        width: 5rem;
+    }
+
+    &-medium {
+        width: 7.5rem;
+    }
+
+    &-large {
+        width: 10rem;
+    }
+
+    &-transparent {
+        color: $blue;
+
+        &:hover {
+            color: $blue-dark;
+            border-color: $blue-dark;
+        }
+    }
+
+}

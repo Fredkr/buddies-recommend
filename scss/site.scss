@@ -1,5 +1,16 @@
-@import "_color";
-@import "_typography";
-@import "_animations";
+// Tools & utilites
+@import "tools/_color";
+@import "tools/_layout-utils";
+@import "tools/_settings";
+@import "tools/_typography";
+
+// Objects
+@import "objects/_animations";
+@import "objects/_buttons";
+
+// Areas/layouts
+@import "areas/_topmenu";
+@import "areas/_account-layout";
+@import "areas/_under-construction";
+
 @import "_base";
-@import "_under-construction";

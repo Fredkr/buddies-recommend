@@ -1,0 +1,34 @@
+.account-layout {
+    background: $blue;
+}
+
+.account-box {
+    flex-direction: column;
+    width: 25%;
+    border-radius: $border-radius-boxes;
+    background: $white-blue-background;
+}
+
+.content {
+    flex-direction: column;
+    padding: $space-large $space-large 0 $space-large;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & * {
+            margin-bottom: $space-default;
+        }
+    }
+}
+
+.bottom-redirect-message {
+    background: $grey;
+    border-bottom-left-radius: $border-radius-boxes;
+    border-bottom-right-radius: $border-radius-boxes;
+    height: 3rem;
+    margin-top: $space-default;
+    color: $white-blue-background;
+}
