@@ -3,6 +3,9 @@ public/css/*
 !public/css/lib/
 public/scripts
 
+# dist
+dist
+
 #config
 config.json
 

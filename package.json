@@ -2,19 +2,30 @@
   "name": "buddies-recommend-site",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "dist/server.js",
+  "config": {
+    "serverscript": "./dist/server/server.js",
+    "dist": "./dist",
+    "scriptsrc": "./scripts",
+    "sasssrc": "./scss",
+    "cssoutput": "./public/css",
+    "scriptsoutputpublic": "./public/scripts"
+  },
   "scripts": {
-    "browserify": "browserify scripts/site.js -o public/scripts/site.js -t [ babelify --presets [ es2015 react ] ]",
-    "eslint": "eslint server.js scripts/**/*.js",
-    "build:js": "npm run eslint && npm run browserify",
-    "build:scss": "node-sass scss/site.scss | postcss --use autoprefixer -o public/css/site.css",
-    "watch": "nodemon -e js,scss,jsx -w server.js -w scripts/**/*.* -w scss/**/*.scss -x 'npm run build:js && npm run build:scss && node server.js'",
-    "postinstall": "mkdir public/scripts public/css && npm run build:scss && npm run build:js"
+    "clean": "rm -rf dist",
+    "browserify": "browserify $npm_package_config_scriptsrc/site.js -o $npm_package_config_scriptsoutputpublic/site.js -t [babelify]",
+    "eslint": "eslint $npm_package_config_scriptsrc",
+    "build:js": "npm run clean & npm run eslint && babel $npm_package_config_scriptsrc --out-dir $npm_package_config_dist",
+    "build:scss": "node-sass $npm_package_config_sasssrc/site.scss | postcss --use autoprefixer -o $npm_package_config_cssoutput/site.css",
+    "watch": "nodemon -e js,jsx,scss -w $npm_package_config_scriptsrc -w $npm_package_config_sasssrc -x 'npm run build:js && npm run build:scss && npm run start'",
+    "postinstall": "mkdir -p $npm_package_config_scriptsoutputpublic -p $npm_package_config_cssoutput && npm run build:scss && npm run build:js",
+    "start": "node $npm_package_config_serverscript"
   },
   "author": "Fredrik Källström",
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^6.1.2",
+    "babel-cli": "^6.3.14",
     "babel-polyfill": "^6.3.14",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
